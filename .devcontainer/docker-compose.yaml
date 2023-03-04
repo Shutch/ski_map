@@ -1,23 +1,24 @@
 version: '3'
 
 services:
-  web:
-    build: .
-    volumes:
-      - type: bind
-        source: .
-        target: /app
+  app:
+    build:
+      context: ../
+      dockerfile: Dockerfile
     ports:
       - "4000:4000"
     environment:
+      - PORT=4000
+      - BINDING=0.0.0.0
       - DB_USERNAME=postgres
       - DB_PASSWORD=postgres
       - DB_HOSTNAME=db
       - DB_NAME=ski_map
+    volumes:
+      - ../:/app
     depends_on:
       - db
-    command: tail -f /dev/null
-    # command: ./run.sh
+    command: sleep infinity
 
   db:
     image: postgis/postgis

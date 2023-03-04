@@ -1,18 +1,22 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"build": {
-		"dockerfile": "../Dockerfile"
-	},
+	"name": "ski-map",
+	"dockerComposeFile": "docker-compose.yaml",
+	"service": "app",
+	"workspaceFolder": "/app",
+	"shutdownAction": "stopCompose",
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"phoenixframework.phoenix",
+				"florinpatrascu.vscode-elixir-snippets",
 				"adrianwilczynski.alpine-js-intellisense",
 				"JakeBecker.elixir-ls",
 				"GitHub.copilot",
 				"eamodio.gitlens",
-				"bradlc.vscode-tailwindcss"
+				"bradlc.vscode-tailwindcss",
+				"petalframework.vscode-petal-components-snippets"
 			]
 		}
 	}
