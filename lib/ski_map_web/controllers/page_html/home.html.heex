@@ -58,6 +58,19 @@
     <p class="mt-4 text-base leading-7 text-zinc-600">
       Build rich, interactive web applications quickly, with less code and fewer moving parts. Join our growing community of developers using Phoenix to craft APIs, HTML5 apps and more, for fun or at scale.
     </p>
+
+    <h1 x-data="{ message: 'I ❤️ Alpine' }" x-text="message"></h1>
+    <div x-data="{ isShowing: true }" class="mt-4 text-base leading-7 text-zinc-600">
+      <p x-show="isShowing">Shows when <code>isShowing</code> is true</p>
+      <p x-show="!isShowing">Shows when <code>isShowing</code> is false</p>
+      <p><code>isShowing: </code><code x-text="isShowing"></code></p>
+    </div>
+
+    <div phx-ignore>
+      <leaflet-map lat="51.505" lng="-0.09">
+      </leaflet-map>
+    </div>
+
     <div class="flex">
       <div class="w-full sm:w-auto">
         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-3">
