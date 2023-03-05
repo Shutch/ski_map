@@ -25,9 +25,9 @@ WORKDIR $APP_HOME
 COPY . $APP_HOME
 
 # Install Dependencies
-# RUN mix deps.get
-# RUN mix deps.compile
-# RUN mix ecto.create
+RUN mix deps.get
+RUN mix deps.compile
+RUN mix ecto.create
 
 # App Port
 EXPOSE 4000
